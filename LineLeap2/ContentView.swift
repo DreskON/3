@@ -29,15 +29,20 @@ struct ContentView: View {
     @State private var xOffset: CGFloat = 0
     @State private var dragOffset: CGSize = .zero
     
+    // Define navy dark blue color
+    let navyDarkBlue = Color(red: 0.1, green: 0.16, blue: 0.3)
+    
     var body: some View {
         ZStack {
-            Color.gray.edgesIgnoringSafeArea(.all) // Apply navy background color to the whole screen
+            // Apply navy dark blue background color to the whole screen
+            navyDarkBlue.edgesIgnoringSafeArea(.all)
             
             VStack {
                 ZStack {
+                    Text("My Passes")
                     RoundedRectangle(cornerRadius: 25) // Adjust cornerRadius as desired
                         .fill(Color.blue)
-                        .frame(width: 200, height: 200) // Adjust size as desired
+                        .frame(width: 330, height: 275) // Adjust size as desired
                         .offset(x: xOffset + dragOffset.width, y: 0) // Restricting vertical movement to 0
                         .gesture(
                             DragGesture()
@@ -74,5 +79,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-// small change for commit 222
