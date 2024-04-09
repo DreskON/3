@@ -5,45 +5,29 @@
 //  Created by Matej Popovski on 4/5/24.
 //
 
-//import SwiftUI
-//
-//struct ContentView: View {
-//    var body: some View {
-//        VStack {
-//            Image(systemName: "globe")
-//                .imageScale(.large)
-//                .foregroundStyle(.tint)
-//            Text("Hello, world!")
-//        }
-//        .padding()
-//    }
-//}
-//
-//#Preview {
-//    ContentView()
-//}
-
 import SwiftUI
 
 struct ContentView: View {
     @State private var xOffset: CGFloat = 0
     @State private var dragOffset: CGSize = .zero
     
-    // Define navy dark blue color
-    let navyDarkBlue = Color(red: 0.1, green: 0.16, blue: 0.3)
-    
     var body: some View {
         ZStack {
-            // Apply navy dark blue background color to the whole screen
-            navyDarkBlue.edgesIgnoringSafeArea(.all)
+            // Background photo
+            Image("background") // Replace "background_photo" with the name of your background photo asset
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
             
             VStack {
                 ZStack {
-                    Text("My Passes")
-                    RoundedRectangle(cornerRadius: 25) // Adjust cornerRadius as desired
-                        .fill(Color.blue)
+                    Image("latezt") // Replace "your_photo" with the name of your photo asset
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
                         .frame(width: 330, height: 275) // Adjust size as desired
-                        .offset(x: xOffset + dragOffset.width, y: 0) // Restricting vertical movement to 0
+                        .clipped()
+                        .cornerRadius(12) // Apply a corner radius to smooth the corners
+                        .offset(x: xOffset + dragOffset.width, y: -175) // Move the photo up by 175 points
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
@@ -52,21 +36,13 @@ struct ContentView: View {
                                 .onEnded { value in
                                     xOffset += value.translation.width
                                     dragOffset = .zero
+                                    
+                                    // Animate the photo back to its original position
+                                    withAnimation {
+                                        xOffset = 0
+                                    }
                                 }
                         )
-                    
-                    Button(action: {
-                        // Action to perform when the button is clicked
-                        print("Button clicked!")
-                    }) {
-                        Text("Click Me!")
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.green)
-                            .cornerRadius(10)
-                            .offset(x: xOffset + dragOffset.width, y: 0) // Restricting vertical movement to 0
-                    }
-                    .padding()
                 }
                 .padding()
             }
@@ -79,3 +55,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+//TEST
