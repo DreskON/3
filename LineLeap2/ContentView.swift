@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var dragOffset: CGSize = .zero
     
     var body: some View {
-        ZStack {
+            ZStack {
             // Background photo
             Image("background") // Replace "background_photo" with the name of your background photo asset
                 .resizable()
@@ -20,6 +20,7 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
+             
                 ZStack {
                     Image("latezt") // Replace "your_photo" with the name of your photo asset
                         .resizable()
@@ -43,8 +44,27 @@ struct ContentView: View {
                                     }
                                 }
                         )
+                    Button(action: {
+                        
+                    }, label: {
+                        Text("      I am the bartender or venue staff               ")
+                            .foregroundColor(.white)
+                            .fontWeight(.semibold)
+                            .padding()
+                            .padding(.vertical, 13)
+                            .padding(.leading, -15)
+                            .background(
+//                                Capsule()
+//                                    .stroke(Color.white, lineWidth: 2.0))
+                                Color.gray
+                                    .cornerRadius(8)
+                                    .shadow(radius: 10))
+                                
+                    })
+                    //.frame(width: 400)
+                    .offset(x: 0, y: 192)
                 }
-                .padding()
+                
             }
         }
     }
