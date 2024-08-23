@@ -1,4 +1,4 @@
-## LineLeap2
+# LineLeap2
 
 Lineleap2 is an experimental Swift and SwiftUI-based iOS app developed in Xcode. The app mimics the concept of bypassing lines at bars, clubs, or events—but with a twist. The project was built solely for experimental purposes, aiming to explore user interface transitions, button actions, and screen navigation in SwiftUI.
 
