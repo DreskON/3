@@ -7,6 +7,7 @@ Lineleap2 is an experimental Swift and SwiftUI-based iOS app developed in Xcode.
 ### Features
 SwiftUI Interface: The app employs a modern SwiftUI framework to create clean and elegant user interfaces.
 Button Action & Screen Transition: A button triggers an action that smoothly transitions to a new screen, demonstrating UI navigation.
+
 Custom UI Design: Experimented with customized styling for buttons and transitions to give the app a unique and polished look.
 
 ### Tech Stack
