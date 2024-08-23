@@ -11,12 +11,14 @@ Button Action & Screen Transition: A button triggers an action that smoothly tra
 
 Custom UI Design: Experimented with customized styling for buttons and transitions to give the app a unique and polished look.
 
-### Tech Stack
-Language: Swift
-Framework: SwiftUI
-Development Environment: Xcode
-
 <img 
     src="images/lineleap.png" 
     alt="Education" 
 />
+
+### Tech Stack
+Language: Swift
+
+Framework: SwiftUI
+
+Development Environment: Xcode
